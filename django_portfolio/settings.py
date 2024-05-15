@@ -87,12 +87,11 @@ WSGI_APPLICATION = 'django_portfolio.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-    # Feel free to alter this value to suit your needs.
-    default=os.environ.get('DATABASE_URL_EXTERNAL'),
-    conn_max_age=600
+        # Feel free to alter this value to suit your needs.
+        default=os.environ.get('DATABASE_URL_EXTERNAL'),
+        conn_max_age=600
     )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
