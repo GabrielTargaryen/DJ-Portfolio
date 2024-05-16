@@ -89,8 +89,8 @@ DATABASES = {
     'default': dj_database_url.config(
     default=os.environ.get('postgres://dj_portfolio_jlpb_user:Q0IkUVQJr8STlkV4x3N6QbXKPwq8IxTj@dpg-cp2hj6mv3ddc73cme1dg-a.oregon-postgres.render.com/dj_portfolio_jlpb'),
     conn_max_age=600
-    )
 
+    )
 }
 
 
