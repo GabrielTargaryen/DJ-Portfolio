@@ -16,6 +16,13 @@ import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import environ
+
+# Inicializa django-environ
+env = environ.Env()
+
+# Lee el archivo .env
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -86,13 +93,11 @@ WSGI_APPLICATION = 'django_portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-    default=os.environ.get('postgres://dj_portfolio_jlpb_user:Q0IkUVQJr8STlkV4x3N6QbXKPwq8IxTj@dpg-cp2hj6mv3ddc73cme1dg-a.oregon-postgres.render.com/dj_portfolio_jlpb'),
+    'default': env.db ( 'DATABASE_URL_ETERNAL', 
+    default='postgres://dj_portfolio_jlpb_user:Q0IkUVQJr8STlkV4x3N6QbXKPwq8IxTj@dpg-cp2hj6mv3ddc73cme1dg-a.oregon-postgres.render.com/dj_portfolio_jlpb',
     conn_max_age=600
-
     )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
